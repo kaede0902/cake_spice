@@ -9,7 +9,7 @@ class ArticlesController extends AppController
         parent::initialize();
 
         $this->Auth->allow(['tags']);
-        
+            
         $this->loadComponent('Paginator');
         $this->loadComponent('Flash'); // Include the FlashComponent
     }
@@ -17,8 +17,9 @@ class ArticlesController extends AppController
     public function index()
     {
         $articles = $this->Paginator->paginate($this->Articles->find());
-        $this->set(compact('articles'));
-
+        $this->set('test','testresult');
+        $printUser = $this->Auth->user('id');
+        $this->set(compact('articles','printUser'));
     }
 
 
@@ -106,7 +107,7 @@ class ArticlesController extends AppController
         if (!$isEditable) {
             $this->Flash->error(
                 'You did not write this, user:  '.$user_now
-                .'  This article is written by user:  '.$article->user_id);
+                .'  This article is written by user:  '.$author);
         }
         return $isEditable;
     }

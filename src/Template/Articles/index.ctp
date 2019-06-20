@@ -6,12 +6,26 @@
 #        ['action' => 'index']
 #    )
 ?>
-<?= 
-    $this->Html->link(
-        '+  Add Article', 
-        ['action' => 'add']
-    ) 
-?>
+<table>
+    <tr>
+        <td>
+            <?= 
+                $this->Html->link(
+                    '+  Add Article', 
+                    ['action' => 'add']
+                ) 
+            ?>
+            <img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698554-icon-42-note-add-512.png" width="40" height="40"> 
+            
+        </td>
+        <td>
+            current user:  <?= $printUser?>
+            <img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/user-512.png" width="40" height="40"> 
+        </td>
+    </tr>
+
+</table>
+
 <table>
     <tr>
         <th>Title</th>
@@ -22,7 +36,6 @@
     
     <?php 
         foreach ($articles as $article): 
-        #debug($this->Articles);
     ?>
     <tr>
 
@@ -43,6 +56,7 @@
                     ]
                 )
             ?>
+            <img src="https://cdn1.iconfinder.com/data/icons/company-business-people-1/32/busibess_people-50-256.png" width="40" height="40"> 
         </td>
         <td>
             <?=
@@ -50,6 +64,7 @@
             ?>
         </td>
         <td>
+                <img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698983-icon-136-document-edit-512.png" width="40" height="40"> 
             <?= 
                 $this->Html->link('Edit', ['action' => 'edit', $article->slug]) 
             ?>
@@ -58,8 +73,9 @@
                     'Delete',
                     ['action'=>'delete', $article->slug],
                     ['confirm'=>'Are you sure?']
-                )
+                );
             ?>
+                <img src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/basket-512.png" width="40" height="40"> 
         </td>
 
     </tr>
