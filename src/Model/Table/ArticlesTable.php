@@ -28,7 +28,7 @@ class ArticlesTable extends Table{
     public function validationDefault(Validator $validator) {
         $validator
             ->allowEmptyString('title', false)
-            ->minLength('title', 10)
+            ->minLength('title', 1)
             ->maxLength('title', 255)
 
             ->allowEmptyString('body', false)

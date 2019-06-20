@@ -1,32 +1,44 @@
 
-<h1>Articles
+<h1>Articles</h1>
 <?php
-    $this -> Html -> link(
-        'login',['action'=>'login']
-    )
+#    $this->Html->link(
+#        'Articles', 
+#        ['action' => 'index']
+#    )
 ?>
-</h1>
 <?= 
     $this->Html->link(
-        'Add Article', 
+        '+  Add Article', 
         ['action' => 'add']
     ) 
 ?>
 <table>
     <tr>
         <th>Title</th>
+        <th>Auther</th>
         <th>Created</th>
         <th>Action</th>
     </tr>
     
     <?php 
         foreach ($articles as $article): 
+        #debug($this->Articles);
     ?>
     <tr>
+
         <td>
             <?=
                 $this -> Html -> link(
                     $article -> title, [
+                        'action' => 'view', $article -> slug
+                    ]
+                )
+            ?>
+        </td>
+        <td>
+            <?=
+                $this -> Html -> link(
+                    $article -> user_id, [
                         'action' => 'view', $article -> slug
                     ]
                 )
