@@ -6,6 +6,7 @@ used 1.5 monthes.
 
 ### Result
 At least, this shows you that I can make basic CURD web app which has Tags and Auth functions following the tutorial.  
+![Screenshot](Articles.PNG)
 
 ### codes
 ``` Auth
